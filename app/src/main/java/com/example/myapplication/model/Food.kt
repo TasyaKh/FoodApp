@@ -1,8 +1,8 @@
 package com.example.myapplication.model
 
 data class Food (
-    val book_id: String,
-    val name: String,
-    val price: String,
-    //val bookImage: String,
+    val food_id: String,
+    val food_name: String,
+    val food_price: String,
+    // val foodImage: String,
     )
