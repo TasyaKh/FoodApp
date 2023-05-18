@@ -14,6 +14,7 @@ import android.webkit.WebView
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -22,6 +23,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.R
+import com.example.myapplication.adapter.DashboardRecyclerAdapter
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import java.lang.Exception
@@ -37,10 +39,19 @@ class DescriptionActivity : AppCompatActivity()
     lateinit var progressLayout: RelativeLayout
     lateinit var toolbar: Toolbar
 
+    lateinit var button2 : Button
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_description)
+
+        button2 = findViewById(R.id.button2)
+
+        button2.setOnClickListener {
+            val intent = Intent(this@DescriptionActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
 //
 //        txtBookName = findViewById(R.id.txtBookName)
 //        txtBookAuthor = findViewById(R.id.txtBookAuthor)

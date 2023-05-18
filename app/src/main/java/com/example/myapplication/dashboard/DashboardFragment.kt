@@ -55,7 +55,7 @@ class DashboardFragment : Fragment()
 
         //setUpAdapter()
 
-//        ниче не тогать!!!
+//      не трогать!!!
         val layoutManager = LinearLayoutManager(activity)
 
         var  recyclerAdapter = DashboardRecyclerAdapter(requireContext(), foodItemsList)
@@ -63,7 +63,7 @@ class DashboardFragment : Fragment()
         var recyclerDashboard: RecyclerView = root.findViewById(R.id.foodItemsRV)
         recyclerDashboard.adapter = recyclerAdapter
         recyclerDashboard.layoutManager = layoutManager
-//        ниче не тогать!!!
+//      не трогать!!!
 
         return root
         //return view
