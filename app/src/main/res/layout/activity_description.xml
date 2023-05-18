@@ -40,7 +40,7 @@
                     android:layout_weight="1.5"
                     android:padding="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/round_fastfood_24" />
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -51,7 +51,9 @@
                         android:id="@+id/txtBookName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Name of the book"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="0dp"
+                        android:text="Гречка"
                         android:textColor="#000"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -63,7 +65,7 @@
                         android:layout_below="@id/txtBookName"
                         android:layout_marginTop="0dp"
                         android:padding="8dp"
-                        android:text="Name of the Author"
+                        android:text="Каша"
                         android:textColor="#000"
                         android:textSize="15sp" />
 
@@ -73,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtBookAuthor"
                         android:padding="8dp"
-                        android:text="Rs. 299"
+                        android:text="Жиры — 2,7 г; белки — 11,7 г; углеводы — 74,9 г"
                         android:textColor="#357a38"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -84,7 +86,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="244dp"
                 android:layout_below="@+id/llContent">
 
                 <TextView
@@ -94,7 +96,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:padding="6dp"
-                    android:text="About the Book:"
+                    android:text="Описание блюда"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -103,27 +105,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txtAboutTheBookStatic"
+                    android:layout_marginBottom="40dp"
                     android:padding="6dp"
-                    android:text="@string/hello_blank_fragment"
-                    android:textSize="18sp"
+                    android:text="Самое популярное блюдо из гречки — каша. Крупу можно просто сварить в воде, а затем добавить немного сливочного масла. Можно сварить кашу на молоке. Иногда вареную гречку обжаривают с луком и подают как гарнир к мясу. Из гречихи также делают мед, чай и лапшу."
                     android:textColor="#000"
-                    android:layout_marginBottom="40dp"/>
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="0dp"
+                    android:text="Назад к списку еды" />
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 
-    <RelativeLayout
-        android:id="@+id/ProgressLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff">
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-
-    </RelativeLayout>
 </RelativeLayout>
 
