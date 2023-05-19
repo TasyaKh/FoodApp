@@ -44,7 +44,7 @@ class DashboardRecyclerAdapter(private val context: Context, private val foodLis
         fun bind(food: Food)
         {
             binding.foodItemNameTV.text = food.food_name
-            binding.foodItemPriceTV.text = "Rs. ${food.food_price}"
+            binding.foodItemPriceTV.text = "${food.food_price} р."
         }
     }
 }
