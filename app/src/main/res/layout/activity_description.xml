@@ -22,63 +22,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:orientation="horizontal"
-                android:weightSum="6">
+                android:weightSum="6"
+                android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/imgBookImage"
-                    android:layout_width="39dp"
+                    android:id="@+id/imgFood"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
                     android:padding="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/buckwheat" />
+                    android:src="@drawable/ic_menu_gallery" />
 
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3.3">
 
-                    <TextView
-                        android:id="@+id/txtBookName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="0dp"
-                        android:text="Гречка"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtBookAuthor"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtBookName"
-                        android:layout_marginTop="0dp"
-                        android:padding="8dp"
-                        android:text="Каша"
-                        android:textColor="#000"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/txtBookPrice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtBookAuthor"
-                        android:padding="8dp"
-                        android:text="Жиры — 2,7 г; белки — 11,7 г; углеводы — 74,9 г"
-                        android:textColor="#a26976"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/foodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:text="foodName"
+                    android:textColor="#000"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:fontFamily="casual"/>
 
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="244dp"
-                android:layout_below="@+id/llContent">
+                android:layout_below="@+id/llContent"
+                android:id="@+id/rL"
+                >
 
                 <TextView
                     android:id="@+id/txtAboutTheBookStatic"
@@ -87,31 +62,38 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
                     android:padding="6dp"
-                    android:text="Описание блюда"
+                    android:text="Описание"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/txtBookDesc"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtAboutTheBookStatic"
-                    android:layout_marginBottom="40dp"
-                    android:padding="6dp"
-                    android:text="Самое популярное блюдо из гречки — каша. Крупу можно просто сварить в воде, а затем добавить немного сливочного масла. Можно сварить кашу на молоке. Иногда вареную гречку обжаривают с луком и подают как гарнир к мясу. Из гречихи также делают мед, чай и лапшу."
-                    android:textColor="#000"
-                    android:textSize="18sp" />
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/txtAboutTheBookStatic">
+
+                    <TextView
+                        android:id="@+id/foodDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="40dp"
+                        android:padding="6dp"
+                        android:text="description"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+                </ScrollView>
+
+
+
             </RelativeLayout>
 
             <Button
                 android:id="@+id/buttonBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_below="@+id/rL"
+                android:text="Назад к списку еды"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="216dp"
-                android:text="Назад к списку еды" />
+                />
         </RelativeLayout>
     </ScrollView>
 

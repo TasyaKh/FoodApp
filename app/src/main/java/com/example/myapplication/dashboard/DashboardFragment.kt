@@ -4,18 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.example.myapplication.R
-import com.example.myapplication.model.Food
 import com.example.myapplication.adapter.DashboardRecyclerAdapter
 import com.example.myapplication.databinding.FragmentDashboardBinding
+import com.example.myapplication.db.entities.AppDatabase
+import com.example.myapplication.server.api.entities.FavoriteCategory
 
 class DashboardFragment : Fragment()
 {
     private var _binding: FragmentDashboardBinding? = null
-    private val foodItemsList: ArrayList<Food> = arrayListOf<Food>()
+    private var foodItemsList: ArrayList<FavoriteCategory> = arrayListOf()
 
 //     This property is only valid between onCreateView and
 //     onDestroyView.
@@ -26,12 +30,16 @@ class DashboardFragment : Fragment()
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        val dashboardViewModel =
+            ViewModelProvider(this).get(DashboardViewModel::class.java)
+
+
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         setHasOptionsMenu(true)
 
-        populateList()
 
         // не трогать!!!
         val layoutManager = LinearLayoutManager(activity)
@@ -41,7 +49,14 @@ class DashboardFragment : Fragment()
         var recyclerDashboard: RecyclerView = root.findViewById(R.id.foodItemsRV)
         recyclerDashboard.adapter = recyclerAdapter
         recyclerDashboard.layoutManager = layoutManager
+
         // не трогать!!!
+
+        dashboardViewModel.populateList()
+
+        dashboardViewModel.categories.observe(viewLifecycleOwner){
+            recyclerAdapter.setCategories(it)
+        }
 
         return root
     }
@@ -52,14 +67,4 @@ class DashboardFragment : Fragment()
         _binding = null
     }
 
-    private fun populateList()
-    {
-        for (i in 1..15)
-        {
-            val name = "Гречка, блюдо №$i"
-            val price = "90.0"
-            val food = Food(food_id = "i", food_name = name, food_price = price)
-            foodItemsList.add(food)
-        }
-    }
 }

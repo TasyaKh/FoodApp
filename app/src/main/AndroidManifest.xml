@@ -13,10 +13,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
         <activity
             android:name=".activity.DescriptionActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".activity.FavoriteFoodActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
+
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
